@@ -1,8 +1,11 @@
+import java.util.Scanner;
 
 // поиск максимальной цифры в числе
 public class Task01 {
-    public static void main(String[] args) {
-        int number = 23545;
+
+    public static int findMaxDigit(int number){
+        // условная тернарная операция для вычисления модуля
+        number = number < 0 ? -number : number;
 
         int max = number % 10;
         number /= 10;
@@ -22,6 +25,17 @@ public class Task01 {
             }
             number /= 10;
         }
-        System.out.println(max + " is max");
+        return max;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Input your number ");
+        int num = scanner.nextInt();
+
+        int digit = findMaxDigit(num);
+
+        System.out.println(digit + " is max");
     }
 }
