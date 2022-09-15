@@ -22,7 +22,7 @@ public class Task08 {
 
         result = cherOddNumbers(a, b, c);
 
-        String msg = result ? "Yes, all numbers are odd." : "No, some numbers are not odd";
+        msg = result ? "Yes, all numbers are odd." : "No, some numbers are not odd";
 
         System.out.println(msg);
     }
