@@ -1,19 +1,31 @@
+// определение числа как палиндлром (123321) или нет
+
 public class Task07 {
-    // обьявление метода
-    public static int sum(int a, int b) { // public - видимый
-        // logik
-        int result = a + b;
-        return result; // остановить метод и вернуть значение во вне
+
+    public static boolean checkPalindrome(int number) {
+        int copy = number;
+        int num = 0;
+
+        while (copy > 9) {          //т к не знаем количество операций  - while
+            num += copy % 10;
+            num *= 10;
+            copy /= 10;
+        }
+
+        num += copy;
+
+        return num == number;
     }
 
-    public static void print(int result) {
-        // output
-        System.out.println(result);
-        return;
-    }
 
     public static void main(String[] args) {
-        int result = sum(6, 7);
-        print(result);
+        int number = Task02.inputPositivNumber();
+
+        boolean result = checkPalindrome(number);
+
+        String msg = result ? "Yes, number is palindrome"
+                : "No, number is not palindrome";
+
+        System.out.println(msg);
     }
 }
