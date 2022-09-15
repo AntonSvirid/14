@@ -20,5 +20,6 @@ public class Task06 {
         String result = getPythagorasTable(dimension);
 
         System.out.println(result);
+
     }
 }
